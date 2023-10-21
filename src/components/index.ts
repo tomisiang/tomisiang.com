@@ -1,0 +1,7 @@
+export { default as Header } from '@/components/Header'
+export { default as Footer } from '@/components/Footer'
+export { default as Section } from '@/components/Section'
+export { default as Information } from '@/components/Information'
+export { default as SplashScreen } from '@/components/SplashScreen'
+export { default as Main } from '@/components/Main'
+export { default as Modal } from '@/components/Modal'
