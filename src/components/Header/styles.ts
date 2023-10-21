@@ -118,16 +118,16 @@ export const AddFriendButton = styled.button<{ $isOpen: boolean }>`
   position: absolute;
   inset: 0;
   background-color: ${({ theme }) => theme.gray2};
-
   border: 1px solid ${({ theme }) => theme.gray1};
-  border-radius: 10px;
 
   color: ${({ theme }) => theme.red1};
   font-weight: 700;
   font-size: 14px;
+  border-radius: 10px;
 
   @media only screen and (max-width: 768px) {
     font-size: 12px;
+    border-radius: 5px;
   }
 
   opacity: 1;
