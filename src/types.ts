@@ -29,6 +29,7 @@ export interface Achievement {
   info: string
   date: string | Duration
   imageUrl?: string
+  moreInfo?: React.ReactNode
 }
 
 export interface Certication extends Achievement {}

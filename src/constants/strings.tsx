@@ -68,7 +68,7 @@ export const EXPERIENCES: Experience[] = [
 export const EDUCATION: Education[] = [
   {
     school: 'University of Mindanao',
-    course: 'Bachelor of Science in Information Technology',
+    course: 'BS in Information Technology',
     duration: { from: '2015', to: '2019' },
   },
 ]
@@ -79,10 +79,19 @@ export const ACHIEVEMENTS: Achievement[] = [
     info: 'Best Capstone 2019',
     date: '2019',
     imageUrl: 'capst.jpg',
+    moreInfo: (
+      <p>
+        The Lead Developer of{' '}
+        <strong>
+          BookHook, an Android-based Student Assistance App that utilizes
+          Optical Character Recognition and the SMMRY Algorithm
+        </strong>
+        , that received the <strong>Best Capstone Project</strong> award on
+        March 20, 2019 at the University of Mindanao.
+      </p>
+    ),
   },
 ]
-
-// Lead Developer of BookHook: An Android-based Student Assistance App utilizing Optical Character Recognition and SMMRY Algorithm University of Mindanao
 
 export const CERTIFICATIONS_HEADER = 'Certifications:'
 

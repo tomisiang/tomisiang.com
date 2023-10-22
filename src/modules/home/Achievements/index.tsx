@@ -16,6 +16,7 @@ export default function AchievementsSection() {
             key={index}
             {...ach}
             leftLine={{ length: ACHIEVEMENTS.length, index }}
+            infoTooltip={ach.moreInfo}
           />
         ))}
         <S.CertificationsHeading>
