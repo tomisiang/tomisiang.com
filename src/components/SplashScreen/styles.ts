@@ -1,7 +1,10 @@
 import { SPLASH_SCREEN_DELAY } from '@/constants/config'
-import { cssFlexCenterChildren, cssVStack } from '@/styles/cssUtils'
+import {
+  cssFlexCenterChildren,
+  cssTruncate,
+  cssVStack,
+} from '@/styles/cssUtils'
 import { styled, keyframes } from 'styled-components'
-import { NameContainer as BaseNameContainer } from '../Header/styles'
 
 const progressBarAnimation = keyframes`
   0% {
@@ -24,9 +27,13 @@ export const SplashScreen = styled.div`
   left: 0;
   z-index: 9999;
 `
+export const NameContainer = styled.div`
+  ${cssTruncate};
 
-export const NameContainer = styled(BaseNameContainer)`
-  flex: unset;
+  > h1,
+  > p {
+    ${cssTruncate};
+  }
 `
 
 export const ProgressBar = styled.div`
