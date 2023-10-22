@@ -38,8 +38,13 @@ export const InfoContainer = styled.div`
 `
 
 export const Info = styled.h3<{ $hasTooltip: boolean }>`
-  cursor: ${({ $hasTooltip }) => ($hasTooltip ? 'pointer' : 'unset')};
   position: relative;
+  ${({ theme, $hasTooltip }) =>
+    $hasTooltip &&
+    css`
+      cursor: pointer;
+      border-bottom: 2px dashed ${theme.blue4};
+    `};
 
   font-size: 19px;
 
