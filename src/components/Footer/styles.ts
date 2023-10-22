@@ -30,6 +30,13 @@ export const FooterDesktop = styled.footer`
   justify-content: flex-end;
   padding-right: 20px;
 
+  p {
+    background-color: ${({ theme }) => theme.bg};
+    border: 1px solid ${({ theme }) => theme.gray1};
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
   @media only screen and (max-width: 1824px) {
     justify-content: center;
     padding-right: unset;
