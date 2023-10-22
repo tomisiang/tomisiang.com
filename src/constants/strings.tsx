@@ -24,7 +24,9 @@ export const ABOUT_TECHNOLOGIES_HEADER = "Technologies I've worked with:"
 export const TECHNOLOGIES: Technology[] = [
   { text: 'Reactjs' },
   { text: 'Nextjs' },
+  { text: 'React Native' },
   { text: 'TypeScript' },
+  { text: 'Native Android' },
   { text: 'Nodejs' },
   { text: 'Express' },
   { text: 'Postgres' },

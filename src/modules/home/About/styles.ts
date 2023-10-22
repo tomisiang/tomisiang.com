@@ -1,7 +1,7 @@
 'use client'
 
 import { TECHNOLOGIES_COLUMN_SIZE } from '@/constants/config'
-import { cssVStack } from '@/styles/cssUtils'
+import { cssTruncate, cssVStack } from '@/styles/cssUtils'
 import styled, { css } from 'styled-components'
 
 export const AboutSectionContainer = styled.div`
@@ -38,7 +38,7 @@ export const AboutTechnologiesHeading = styled.h3`
 `
 
 export const TechnologiesUl = styled.ul`
-  max-width: 480px;
+  max-width: 510px;
   display: grid;
   gap: 10px;
   margin-top: 10px;
@@ -50,9 +50,15 @@ export const TechnologiesUl = styled.ul`
     margin-right: 10px;
     grid-template-columns: repeat(${TECHNOLOGIES_COLUMN_SIZE - 1}, 1fr);
   }
+
+  > li {
+    min-width: 0;
+  }
 `
 
-export const TechnologiesBox = styled.div<{ $column: number }>`
+export const TechnologiesBox = styled.div<{
+  $column: number
+}>`
   padding: 10px 5px;
   border-radius: 10px;
   position: relative;
@@ -90,7 +96,14 @@ export const TechnologiesBox = styled.div<{ $column: number }>`
     }}
   }
 
+  &:hover {
+    > h4 {
+      white-space: unset;
+    }
+  }
+
   > h4 {
+    ${cssTruncate};
     font-weight: 700;
     font-size: 16px;
 
