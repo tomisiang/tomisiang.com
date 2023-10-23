@@ -58,7 +58,13 @@ export const EXPERIENCES: Experience[] = [
     position: 'Native Android Developer',
     positionInfo: (
       <ul>
-        <li>Build very cool native android apps</li>
+        <li>
+          Built <strong>Native Android</strong> apps for corporate use,
+          utilizing both <strong>Java</strong> and <strong>Kotlin</strong> to
+          create versatile and high-performance solutions. These apps are
+          optimized for various devices and aligned them with the
+          {"organization's"} objectives.
+        </li>
       </ul>
     ),
     duration: { from: '2019', to: '2022' },
