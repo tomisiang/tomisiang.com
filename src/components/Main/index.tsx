@@ -6,7 +6,7 @@ import { Main as StyledMain } from '@/styles/cssComponents'
 import { useUIStore } from '@/global-stores'
 
 export default function Main({ children }: PropsWithChildren) {
-  const { setIsMobile } = useUIStore()
+  const setIsMobile = useUIStore(state => state.setIsMobile)
 
   // Sets isMobile
   useEventListener(
