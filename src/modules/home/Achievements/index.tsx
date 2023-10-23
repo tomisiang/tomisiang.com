@@ -11,12 +11,12 @@ export default function AchievementsSection() {
   return (
     <Section title={NAV_ITEMS[3].text}>
       <S.AchievementsSection>
-        {ACHIEVEMENTS.map((ach, index) => (
+        {ACHIEVEMENTS.map(({ moreInfo, ...ach }, index) => (
           <Information
             key={index}
             {...ach}
             leftLine={{ length: ACHIEVEMENTS.length, index }}
-            infoTooltip={ach.moreInfo}
+            infoTooltip={moreInfo}
           />
         ))}
         <S.CertificationsHeading>
