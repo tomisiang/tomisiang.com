@@ -40,9 +40,9 @@ export const EXPERIENCES: Experience[] = [
     positionInfo: (
       <ul>
         <li>
-          Proficiently utilized React.js to develop and maintain a codebase,
-          translating designs into responsive web interfaces and reusable
-          components.
+          Proficiently utilized <strong>React.js</strong> to develop and
+          maintain a codebase, translating designs into responsive web
+          interfaces and reusable components.
         </li>
         <li>
           Optimized components for top performance across diverse web devices
