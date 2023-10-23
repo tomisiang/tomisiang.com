@@ -176,6 +176,10 @@ export const ImageButton = styled.button`
     border-radius: 10px;
     opacity: 0.4;
 
+    @media only screen and (max-width: 768px) {
+      border-radius: 5px;
+    }
+
     &:hover {
       opacity: 1;
     }

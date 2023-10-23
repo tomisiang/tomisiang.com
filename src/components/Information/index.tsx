@@ -128,6 +128,7 @@ function ToolTipComponent(props: ToolTipComponentProps) {
 }
 
 function ImageComponent({ imageUrl }: { imageUrl: string }) {
+  const isMobile = useUIStore(state => state.isMobile)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const closeImageModal = () => setIsImageModalOpen(false)
   const openImageModal = () => setIsImageModalOpen(true)
@@ -137,8 +138,8 @@ function ImageComponent({ imageUrl }: { imageUrl: string }) {
       <S.ImageButton className='image-link' onClick={openImageModal}>
         <Image
           src={`/assets/${imageUrl}`}
-          width={90}
-          height={60}
+          width={isMobile ? 67.5 : 90}
+          height={isMobile ? 45 : 60}
           alt={imageUrl}
         />
       </S.ImageButton>
