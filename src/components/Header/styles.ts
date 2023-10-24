@@ -112,7 +112,7 @@ const fadeInUp = keyframes`
   }
 `
 
-export const AddFriendButton = styled.button<{ $isOpen: boolean }>`
+export const AddFriendButton = styled.button<{ $isRevelealed: boolean }>`
   overflow: hidden;
   cursor: pointer;
   position: absolute;
@@ -125,16 +125,11 @@ export const AddFriendButton = styled.button<{ $isOpen: boolean }>`
   font-size: 14px;
   border-radius: 10px;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
-    border-radius: 5px;
-  }
-
   opacity: 1;
   transition: opacity 0.4s ease, border 0.4s ease, background-color 0.4s ease;
 
-  ${({ $isOpen }) =>
-    !$isOpen &&
+  ${({ $isRevelealed }) =>
+    $isRevelealed &&
     css`
       opacity: 0;
       border: 0;
@@ -159,11 +154,25 @@ export const AddFriendButton = styled.button<{ $isOpen: boolean }>`
     fill: ${({ theme }) => theme.red1};
     width: 20px;
     height: 20px;
+  }
+`
 
-    @media only screen and (max-width: 768px) {
-      width: 15px;
-      height: 15px;
-    }
+export const AddFriendButtonMobile = styled.button`
+  overflow: hidden;
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: ${({ theme }) => theme.gray2};
+  border: 1px solid ${({ theme }) => theme.gray1};
+
+  color: ${({ theme }) => theme.red1};
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 5px;
+
+  svg {
+    fill: ${({ theme }) => theme.red1};
+    width: 15px;
+    height: 15px;
   }
 `
 
@@ -192,4 +201,37 @@ export const AddFriendText = styled.div`
   justify-content: center;
   align-items: center;
   gap: 5px;
+`
+
+export const ModalContent = styled.div`
+  ${cssVStack};
+  gap: 20px;
+`
+
+export const ContactsTitle = styled.h3`
+  font-size: 22px;
+  margin: 0 auto;
+`
+
+export const LinksContainer = styled.div`
+  ${cssVStack};
+`
+
+export const LinksItem = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 0;
+
+  border-bottom: 2px dashed ${({ theme }) => theme.gray1};
+  &:first-child {
+    border-top: 2px dashed ${({ theme }) => theme.gray1};
+  }
+
+  svg {
+    fill: ${({ theme }) => theme.red1};
+    width: 25px;
+    height: 25px;
+  }
 `

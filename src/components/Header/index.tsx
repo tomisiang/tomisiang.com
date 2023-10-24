@@ -10,6 +10,7 @@ import { useEventListener, useOnClickOutside } from '@/global-hooks'
 import { useUIStore } from '@/global-stores'
 import { HiUserAdd } from 'react-icons/hi'
 import { IMAGE_DIMENSIONS } from '@/constants/config'
+import Modal from '../Modal'
 
 const { DESKTOP, MOBILE } = IMAGE_DIMENSIONS
 
@@ -70,15 +71,24 @@ function MyImage(props: MyImageProps) {
 }
 
 function Links() {
-  const [isOpen, setIsOpen] = useState(true)
-  const close = () => setIsOpen(false)
+  const isMobile = useUIStore(state => state.isMobile)
+
+  if (isMobile) return <LinksMobile />
+
+  return <LinksDesktop />
+}
+
+function LinksDesktop() {
+  const [isRevealed, setIsRevealed] = useState(false)
+  const reveal = () => setIsRevealed(true)
+  const hide = () => setIsRevealed(false)
 
   const toggleRef = useRef(null)
-  useOnClickOutside(toggleRef, () => setIsOpen(true))
+  useOnClickOutside(toggleRef, hide)
 
   return (
     <S.Links ref={toggleRef}>
-      <S.AddFriendButton onClick={close} $isOpen={isOpen}>
+      <S.AddFriendButton onClick={reveal} $isRevelealed={isRevealed}>
         <S.AddFriendInner>
           <S.AddFriendText>
             <HiUserAdd />
@@ -86,13 +96,43 @@ function Links() {
           </S.AddFriendText>
         </S.AddFriendInner>
       </S.AddFriendButton>
-      {/* {isOpen && (
-      )} */}
       {MY_LINKS.map((link, index) => (
         <a href={link.url} key={index} target='_blank'>
           <link.icon />
         </a>
       ))}
     </S.Links>
+  )
+}
+
+function LinksMobile() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const closeModal = () => setIsModalOpen(false)
+  const openModal = () => setIsModalOpen(true)
+
+  return (
+    <>
+      <S.Links>
+        <S.AddFriendButtonMobile onClick={openModal}>
+          <S.AddFriendText>
+            <HiUserAdd />
+            Add Friend
+          </S.AddFriendText>
+        </S.AddFriendButtonMobile>
+      </S.Links>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <S.ModalContent>
+          <S.ContactsTitle>Contacts</S.ContactsTitle>
+          <S.LinksContainer>
+            {MY_LINKS.map((link, index) => (
+              <S.LinksItem href={link.url} key={index} target='_blank'>
+                <link.icon />
+                <span>{link.path}</span>
+              </S.LinksItem>
+            ))}
+          </S.LinksContainer>
+        </S.ModalContent>
+      </Modal>
+    </>
   )
 }
