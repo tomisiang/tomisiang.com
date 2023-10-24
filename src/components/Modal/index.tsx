@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { RiCloseFill } from 'react-icons/ri'
 import * as S from './styles'
 
 interface ModalProps {
@@ -42,7 +43,9 @@ export default function Modal(props: ModalProps) {
         <>
           <S.Overlay $isOpen={isOpenDelay} onClick={onClose} />
           <S.Modal $isOpen={isOpenDelay}>
-            <S.CloseButton onClick={onClose}>&times;</S.CloseButton>
+            <S.CloseButton onClick={onClose}>
+              <RiCloseFill />
+            </S.CloseButton>
             {children}
           </S.Modal>
         </>,

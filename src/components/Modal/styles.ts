@@ -49,14 +49,17 @@ export const Modal = styled(Container)<Props>`
     css`
       transition: transform ${ANIMATION_DELAY}ms ease-in ${ANIMATION_DELAY}ms;
       transform: translate(-50%, -50%);
-    `}
+    `};
+
+  @media only screen and (max-width: 768px) {
+    height: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 `
 
 export const CloseButton = styled.button`
   border-radius: 50%;
-  /* width: 50px;
-  height: 50px; */
-  /* border: 1px solid ${({ theme }) => theme.gray1}; */
   background: none;
   border: none;
   outline: none;
@@ -66,13 +69,16 @@ export const CloseButton = styled.button`
   justify-content: center;
   align-items: center;
 
-  font-size: 50px;
-  font-weight: 100;
-  color: ${({ theme }) => theme.red1};
   margin-left: auto;
   margin-bottom: 20px;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  svg {
+    fill: ${({ theme }) => theme.red1};
+    width: 45px;
+    height: 45px;
   }
 `
