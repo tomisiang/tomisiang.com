@@ -97,12 +97,12 @@ export const TechnologiesBox = styled.div<{
   }
 
   &:hover {
-    > h4 {
+    > div {
       white-space: unset;
     }
   }
 
-  > h4 {
+  > div {
     ${cssTruncate};
     font-weight: 700;
     font-size: 16px;

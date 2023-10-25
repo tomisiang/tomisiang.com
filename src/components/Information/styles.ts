@@ -37,8 +37,10 @@ export const InfoContainer = styled.div`
   position: relative;
 `
 
-export const Info = styled.h3<{ $hasTooltip: boolean }>`
+export const Info = styled.div<{ $hasTooltip: boolean }>`
   position: relative;
+  font-weight: 700;
+
   ${({ theme, $hasTooltip }) =>
     $hasTooltip &&
     css`

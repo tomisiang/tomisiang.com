@@ -67,7 +67,7 @@ function TechnlogyBox(props: TechnologyWithColumn) {
   return (
     <li>
       <S.TechnologiesBox $column={column}>
-        <h4>{text}</h4>
+        <div>{text}</div>
       </S.TechnologiesBox>
     </li>
   )
