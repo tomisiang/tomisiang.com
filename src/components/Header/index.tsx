@@ -1,12 +1,12 @@
 'use client'
 
 import * as S from './styles'
-import { useCallback, useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Nav from '../Nav'
 import Image from 'next/image'
 import { NAME, POSITION } from '@/constants/strings'
 import { MY_LINKS } from '@/constants/links'
-import { useEventListener, useOnClickOutside } from '@/global-hooks'
+import { useOnClickOutside } from '@/global-hooks'
 import { useUIStore } from '@/global-stores'
 import { HiUserAdd } from 'react-icons/hi'
 import { IMAGE_DIMENSIONS } from '@/constants/config'
@@ -15,7 +15,10 @@ import Modal from '../Modal'
 const { DESKTOP, MOBILE } = IMAGE_DIMENSIONS
 
 export default function Header() {
-  const { isScroll, setIsScroll, isMobile } = useUIStore()
+  const { isScroll, isMobile } = useUIStore(({ isScroll, isMobile }) => ({
+    isScroll,
+    isMobile,
+  }))
   const [imageDimensions, setImageDimensions] = useState(DESKTOP.NOT_SCROLL)
 
   useEffect(() => {
@@ -25,22 +28,6 @@ export default function Header() {
 
     setImageDimensions(isScroll ? DESKTOP.SCROLL : DESKTOP.NOT_SCROLL)
   }, [isMobile, isScroll])
-
-  const main =
-    typeof window !== 'undefined' ? document.getElementById('main') : null
-
-  useEventListener(
-    useCallback(() => {
-      if (!main) return
-
-      if (main.scrollTop > 0 && !isScroll) {
-        setIsScroll(true)
-      } else if (main.scrollTop === 0 && isScroll) {
-        setIsScroll(false)
-      }
-    }, [isScroll, main, setIsScroll]),
-    { type: 'scroll', target: main }
-  )
 
   return (
     <S.Header $isScroll={isScroll} $isMobile={isMobile}>
