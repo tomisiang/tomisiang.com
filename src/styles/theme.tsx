@@ -9,7 +9,6 @@ import {
   ThemeProvider,
   css,
 } from 'styled-components'
-import isPropValid from '@emotion/is-prop-valid'
 
 const colors = {
   white: '#fff',

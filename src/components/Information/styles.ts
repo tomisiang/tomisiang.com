@@ -1,7 +1,7 @@
 'use client'
 
 import { cssHStack, cssVStack } from '@/styles/cssUtils'
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const CONNECTOR_TOP_OFFSET = 4
 const CONNECTOR_GAP = 10 // Change this for the gap
