@@ -159,6 +159,11 @@ export const Bullet = styled.div`
   height: 16px;
   border: 2px solid ${({ theme }) => theme.blue1};
   border-radius: 50%;
+
+  @media only screen and (max-width: 768px) {
+    width: 12px;
+    height: 12px;
+  }
 `
 export const InformationConnector = styled.div`
   width: 2px;
