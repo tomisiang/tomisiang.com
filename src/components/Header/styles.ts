@@ -160,7 +160,7 @@ export const AddFriendButton = styled.button<{ $isRevelealed: boolean }>`
 export const AddFriendButtonMobile = styled.button`
   overflow: hidden;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 5px 10px;
   background-color: ${({ theme }) => theme.gray2};
   border: 1px solid ${({ theme }) => theme.gray1};
 
