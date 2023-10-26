@@ -49,3 +49,8 @@ export const Main = styled.main`
     margin-bottom: 0;
   }
 `
+
+export const Emph = styled.span`
+  font-weight: 700;
+  font-style: italic;
+`

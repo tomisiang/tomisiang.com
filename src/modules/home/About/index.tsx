@@ -45,7 +45,7 @@ export default function AboutSection() {
   return (
     <Section>
       <S.AboutSectionContainer>
-        <S.AboutParagraph>{ABOUT_PARAGRAPH}</S.AboutParagraph>
+        <S.AboutParagraphContainer>{ABOUT_PARAGRAPH}</S.AboutParagraphContainer>
         <S.AboutTechnologies>
           <S.AboutTechnologiesHeading>
             {ABOUT_TECHNOLOGIES_HEADER}

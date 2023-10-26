@@ -8,19 +8,23 @@ export const AboutSectionContainer = styled.div`
   ${cssVStack};
 `
 
-export const AboutParagraph = styled.p`
-  text-indent: 2rem;
-  line-height: 155%;
-
+export const AboutParagraphContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.gray1};
   background-color: ${({ theme }) => theme.gray2};
   border-radius: 10px;
   padding: 10px;
 
-  font-size: 16px;
+  ${cssVStack};
+  gap: 20px;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 12px;
+  > p {
+    text-indent: 2rem;
+    line-height: 155%;
+    font-size: 16px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 `
 

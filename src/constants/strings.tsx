@@ -1,3 +1,5 @@
+import { Emph } from '@/styles/cssComponents'
+
 import type {
   Education,
   Experience,
@@ -16,8 +18,22 @@ export const NAV_ITEMS = [
   { text: 'Achievements' },
 ]
 
-export const ABOUT_PARAGRAPH =
-  'Hello, my name is Tom. I am a highly motivated and continuously learning individual with a keen interest in emerging technologies. As a dedicated problem-solver, I take pride in my ability to consistently overcome project obstacles while adhering to the principles of robust and elegant solutions.'
+export const ABOUT_PARAGRAPH = (
+  <>
+    <p>
+      Hello, my name is <Emph>Tom</Emph>. I am a highly motivated and
+      continuously learning individual with a keen interest in emerging
+      technologies. As a <Emph>dedicated problem-solver</Emph>, I take pride in
+      my ability to consistently overcome project obstacles while adhering to
+      the <Emph>principles of robust</Emph> and <Emph>elegant solutions</Emph>.
+    </p>
+    <p>
+      I consider myself a <Emph>kind</Emph> and{' '}
+      <Emph>empathetic individual</Emph> who understands the significance of
+      maintaining a positive and supportive attitude in a team.
+    </p>
+  </>
+)
 
 export const ABOUT_TECHNOLOGIES_HEADER = "Technologies I've worked with:"
 
@@ -40,9 +56,9 @@ export const EXPERIENCES: Experience[] = [
     positionInfo: (
       <ul>
         <li>
-          Proficiently utilized <strong>React.js</strong> to develop and
-          maintain a codebase, translating designs into responsive web
-          interfaces and reusable components.
+          Proficiently utilized <Emph>React.js</Emph> to develop and maintain a
+          codebase, translating designs into responsive web interfaces and
+          reusable components.
         </li>
         <li>
           Optimized components for top performance across diverse web devices
@@ -59,10 +75,10 @@ export const EXPERIENCES: Experience[] = [
     positionInfo: (
       <ul>
         <li>
-          Built <strong>Native Android</strong> apps for corporate use,
-          utilizing both <strong>Java</strong> and <strong>Kotlin</strong> to
-          create versatile and high-performance solutions. These apps are
-          optimized for various devices and aligned them with the
+          Built <Emph>Native Android</Emph> apps for corporate use, utilizing
+          both <Emph>Java</Emph> and <Emph>Kotlin</Emph> to create versatile and
+          high-performance solutions. These apps are optimized for various
+          devices and aligned them with the
           {"organization's"} objectives.
         </li>
       </ul>
@@ -88,12 +104,12 @@ export const ACHIEVEMENTS: Achievement[] = [
     moreInfo: (
       <p>
         The Lead Developer of{' '}
-        <strong>
+        <Emph>
           BookHook, an Android-based Student Assistance App that utilizes
           Optical Character Recognition and the SMMRY Algorithm
-        </strong>
-        , that received the <strong>Best Capstone Project</strong> award on
-        March 20, 2019 at the University of Mindanao.
+        </Emph>
+        , that received the <Emph>Best Capstone Project</Emph> award on March
+        20, 2019 at the University of Mindanao.
       </p>
     ),
   },
