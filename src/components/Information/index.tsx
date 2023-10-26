@@ -66,6 +66,7 @@ export default function Information(props: InformationProps) {
           <S.Info
             onClick={hasTooltip ? toggle : undefined}
             $hasTooltip={hasTooltip}
+            $isOpened={isOpened}
           >
             {info}
           </S.Info>

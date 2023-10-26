@@ -37,16 +37,20 @@ export const InfoContainer = styled.div`
   position: relative;
 `
 
-export const Info = styled.div<{ $hasTooltip: boolean }>`
+interface InfoProps {
+  $hasTooltip: boolean
+  $isOpened: boolean
+}
+export const Info = styled.div<InfoProps>`
   position: relative;
   font-weight: 700;
 
-  ${({ theme, $hasTooltip }) =>
+  ${({ theme, $hasTooltip, $isOpened }) =>
     $hasTooltip &&
     css`
       cursor: pointer;
-      color: ${theme.blue6};
-      /* border-bottom: 2px dashed ${theme.blue4}; */
+      color: ${$isOpened ? theme.blue1 : theme.blue6};
+      transition: color 0.3s ease-out;
     `};
 
   font-size: 19px;
