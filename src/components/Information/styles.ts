@@ -45,7 +45,8 @@ export const Info = styled.div<{ $hasTooltip: boolean }>`
     $hasTooltip &&
     css`
       cursor: pointer;
-      border-bottom: 2px dashed ${theme.blue4};
+      color: ${theme.blue6};
+      /* border-bottom: 2px dashed ${theme.blue4}; */
     `};
 
   font-size: 19px;
