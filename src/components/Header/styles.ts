@@ -112,6 +112,27 @@ const fadeInUp = keyframes`
   }
 `
 
+const fadeInDown = keyframes`
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  49% {
+
+    transform: scaleY(1);
+    transform-origin: top;
+
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+`
+
 export const AddFriendButton = styled.button<{ $isRevelealed: boolean }>`
   overflow: hidden;
   cursor: pointer;
@@ -193,6 +214,7 @@ export const AddFriendInner = styled.div`
     height: 100%;
     background: ${({ theme }) => theme.red1};
     transform: scaleY(0);
+    animation: ${fadeInDown} 0.8s ease;
   }
 `
 export const AddFriendText = styled.div`

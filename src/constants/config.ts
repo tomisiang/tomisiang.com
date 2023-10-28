@@ -2,7 +2,7 @@ export const OUTER_MARGIN = 20
 export const TECHNOLOGIES_COLUMN_SIZE = 4
 export const MAX_WIDTH = 680
 export const OUTER_BORDER_WIDTH = 40
-export const SPLASH_SCREEN_DELAY = 500
+export const SPLASH_SCREEN_DELAY = 800
 
 export const NAV_HEIGHT = {
   DESKTOP: {
