@@ -14,6 +14,7 @@ export const FooterMobile = styled.footer`
   ${footerFontStyle};
   justify-content: center;
   padding-top: 20px;
+  padding-bottom: 20px;
 
   @media only screen and (min-width: 1223px) {
     display: none;
