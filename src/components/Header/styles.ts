@@ -223,6 +223,7 @@ export const AddFriendText = styled.div`
   justify-content: center;
   align-items: center;
   gap: 5px;
+  transition: opacity 0.3s ease 0.4s;
 `
 
 export const ModalContent = styled.div`
