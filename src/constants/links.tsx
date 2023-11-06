@@ -29,7 +29,7 @@ export const MY_LINKS = [
     icon: AiOutlineInstagram,
   },
   {
-    url: 'https://www.facebook.com/tomisiangcom',
+    url: 'https://www.instagram.com/tomisiang',
     path: '/tomisiang',
     icon: AiFillFacebook,
   },
