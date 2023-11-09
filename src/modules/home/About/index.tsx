@@ -10,6 +10,7 @@ import {
 import { TECHNOLOGIES_COLUMN_SIZE } from '@/constants/config'
 import { useMemo } from 'react'
 import { useUIStore } from '@/global-stores'
+import { AiOutlineDownload } from 'react-icons/ai'
 import type { TechnologyWithColumn } from '@/types'
 
 function getTechnologiesWithColumn(isMobile: boolean): TechnologyWithColumn[] {
@@ -45,7 +46,13 @@ export default function AboutSection() {
   return (
     <Section>
       <S.AboutSectionContainer>
-        <S.AboutParagraphContainer>{ABOUT_PARAGRAPH}</S.AboutParagraphContainer>
+        <S.AboutParagraphContainer>
+          <S.AboutParagraphTop>{ABOUT_PARAGRAPH}</S.AboutParagraphTop>
+          <S.DownloadResume href={'/docs/tom_isiang_resume.pdf'} download>
+            <AiOutlineDownload />
+            <span>Resume</span>
+          </S.DownloadResume>
+        </S.AboutParagraphContainer>
         <S.AboutTechnologies>
           <S.AboutTechnologiesHeading>
             {ABOUT_TECHNOLOGIES_HEADER}

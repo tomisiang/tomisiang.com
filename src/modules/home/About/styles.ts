@@ -1,7 +1,7 @@
 'use client'
 
 import { TECHNOLOGIES_COLUMN_SIZE } from '@/constants/config'
-import { cssTruncate, cssVStack } from '@/styles/cssUtils'
+import { cssHStack, cssTruncate, cssVStack } from '@/styles/cssUtils'
 import styled, { css } from 'styled-components'
 
 export const AboutSectionContainer = styled.div`
@@ -12,10 +12,15 @@ export const AboutParagraphContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.gray1};
   background-color: ${({ theme }) => theme.gray2};
   border-radius: 10px;
-  padding: 10px;
+  overflow: hidden;
 
   ${cssVStack};
+`
+
+export const AboutParagraphTop = styled.div`
+  ${cssVStack};
   gap: 20px;
+  padding: 10px;
 
   > p {
     text-indent: 2rem;
@@ -24,6 +29,37 @@ export const AboutParagraphContainer = styled.div`
 
     @media only screen and (max-width: 768px) {
       font-size: 12px;
+    }
+  }
+`
+
+export const DownloadResume = styled.a`
+  border: 0;
+  padding: 8px 0;
+  background-color: ${({ theme }) => theme.blue7};
+  cursor: pointer;
+
+  ${cssHStack};
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  > svg {
+    fill: ${({ theme }) => theme.blue1};
+    width: 15px;
+    height: 15px;
+
+    @media only screen and (max-width: 768px) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  > span {
+    font-size: 14px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
     }
   }
 `
