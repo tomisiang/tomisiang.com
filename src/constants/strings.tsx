@@ -103,7 +103,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     imageUrl: 'capst.jpg',
     moreInfo: (
       <p>
-        The Lead Developer behind{' '}
+        The Lead Developer of the team behind{' '}
         <Emph>
           BookHook: an Android-based Student Assistance App that utilizes
           Optical Character Recognition and the SMMRY Algorithm
