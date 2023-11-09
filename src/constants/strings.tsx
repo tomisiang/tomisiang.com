@@ -65,6 +65,13 @@ export const EXPERIENCES: Experience[] = [
           and browsers, efficiently turning designs into functional code while
           adhering to process specifications.
         </li>
+        <li>
+          Developed a <Emph>React Native</Emph> mobile application as an
+          extension of an existing <Emph>React web app</Emph>, ensuring a
+          seamless cross-platform user experience and consistent design
+          elements, while also enhancing performance and maintaining a
+          consistent user experience.
+        </li>
       </ul>
     ),
     duration: { from: '2022' },
