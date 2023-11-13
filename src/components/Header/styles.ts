@@ -196,7 +196,8 @@ export const AddFriendButtonMobile = styled.button`
   padding: 5px 10px;
   background-color: ${({ theme }) =>
     theme.themeId === 'DARK' ? theme.gray4 : theme.gray2};
-  border: 1px solid ${({ theme }) => theme.gray1};
+  border: ${({ theme }) =>
+    theme.themeId === 'DARK' ? 'none' : `1px solid ${theme.gray1}`};
 
   color: ${({ theme }) => theme.accent};
   font-weight: 700;
