@@ -20,11 +20,13 @@ export const OuterBorder = styled(Container)`
   margin-top: ${OUTER_MARGIN}px;
   margin-bottom: ${OUTER_MARGIN}px;
   border-radius: 20px;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.cardBg};
+  transition: background-color 0.4s ease;
 
   height: calc(100svh - ${OUTER_MARGIN * 2}px);
   height: calc(100vh - ${OUTER_MARGIN * 2}px);
-  border: 1px solid ${({ theme }) => theme.gray1};
+  border: ${({ theme }) =>
+    theme.themeId === 'DARK' ? 'none' : `1px solid ${theme.gray1}`};
   padding: ${OUTER_BORDER_WIDTH}px ${OUTER_BORDER_WIDTH}px 0;
 
   // Remove border, bottom margin, paddings
@@ -35,6 +37,7 @@ export const OuterBorder = styled(Container)`
     height: 100svh;
     border: unset;
     padding: 0 20px 0;
+    border-radius: 0;
   }
 `
 

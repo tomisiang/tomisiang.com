@@ -49,7 +49,11 @@ export const Info = styled.div<InfoProps>`
     $hasTooltip &&
     css`
       cursor: pointer;
-      color: ${$isOpened ? theme.blue1 : theme.blue6};
+      color: ${theme.themeId === 'DARK'
+        ? theme.white
+        : $isOpened
+        ? theme.blue1
+        : theme.blue6};
       transition: color 0.3s ease-out;
     `};
 
@@ -80,7 +84,7 @@ export const InfoTooltipUnderline = styled.div<{ $isOpened: boolean }>`
     bottom: 0px;
     left: 0;
     height: 3px;
-    background-color: ${({ theme }) => theme.blue1};
+    background-color: ${({ theme }) => theme.color};
     width: 100%;
 
     transition: transform 0.3s ease-out 0.3s;
@@ -106,12 +110,13 @@ interface InfoTooltipContentProps {
 
 export const InfoTooltipContent = styled.div<InfoTooltipContentProps>`
   position: absolute;
-  background-color: ${({ theme }) => theme.blue1};
+  background-color: ${({ theme }) => theme.color};
   width: ${({ $tooltipWidth }) => $tooltipWidth}px;
   top: 0;
   left: 100%;
   border-radius: 0 10px 10px 10px;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) =>
+    theme.themeId === 'DARK' ? theme.blue1 : theme.white};
   z-index: 1000;
   padding: 15px 10px;
 
@@ -142,7 +147,7 @@ export const InfoTooltipContent = styled.div<InfoTooltipContentProps>`
 `
 
 export const Date = styled.p`
-  color: ${({ theme }) => theme.red1};
+  color: ${({ theme }) => theme.accent};
 
   font-size: 16px;
 
@@ -164,7 +169,7 @@ export const LeftGraphics = styled.div`
 export const Bullet = styled.div`
   width: 16px;
   height: 16px;
-  border: 2px solid ${({ theme }) => theme.blue1};
+  border: 2px solid ${({ theme }) => theme.color};
   border-radius: 50%;
 
   @media only screen and (max-width: 768px) {
@@ -175,7 +180,7 @@ export const Bullet = styled.div`
 export const InformationConnector = styled.div`
   width: 2px;
   flex: 1;
-  background-color: ${({ theme }) => theme.blue1};
+  background-color: ${({ theme }) => theme.color};
   border-radius: 10px;
 `
 

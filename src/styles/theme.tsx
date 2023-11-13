@@ -9,6 +9,7 @@ import {
   ThemeProvider,
   css,
 } from 'styled-components'
+import { useThemeStore } from '@/global-stores'
 
 const colors = {
   white: '#fff',
@@ -22,12 +23,30 @@ const colors = {
   blue7: '#C2C6CE',
   gray1: '#D5D5D5',
   gray2: '#E3E4E6',
+  gray3: '#424549',
+  gray4: '#36393E',
+  gray5: '#80848E',
   red1: '#A44F66',
+  red2: '#CC9CA9',
 }
 
 export const theme = {
-  ...colors,
-  bg: colors.white2,
+  LIGHT: {
+    themeId: 'LIGHT',
+    ...colors,
+    bg: `linear-gradient(to bottom, ${colors.white2}, ${colors.blue5})`,
+    cardBg: colors.white2,
+    color: colors.blue1,
+    accent: colors.red1,
+  },
+  DARK: {
+    themeId: 'DARK',
+    ...colors,
+    bg: colors.gray4,
+    cardBg: colors.gray3,
+    color: colors.white,
+    accent: colors.red2,
+  },
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -45,14 +64,15 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${({ theme }) => css`
-      color: ${theme.blue1};
-      background: linear-gradient(to bottom, ${theme.bg}, ${theme.blue5});
+      color: ${theme.color};
+      background: ${theme.bg};
+      transition: background 0.4s ease;
 
       @media only screen and (max-width: 768px) {
         background: ${theme.bg};
       }
     `}
-  }
+  }  
 
   a {
     text-decoration: none;
@@ -67,7 +87,8 @@ const GlobalStyle = createGlobalStyle`
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.gray2};
+    background: ${({ theme }) =>
+      theme.themeId === 'DARK' ? theme.bg : theme.gray2};
   }
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.blue4};
@@ -93,16 +114,20 @@ function StyledComponentsRegistry({ children }: PropsWithChildren) {
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      <GlobalStyle />
       {children}
     </StyleSheetManager>
   )
 }
 
 export default function StyledComponents({ children }: PropsWithChildren) {
+  const themeId = useThemeStore(state => state.id)
+
   return (
-    <ThemeProvider theme={theme}>
-      <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-    </ThemeProvider>
+    <StyledComponentsRegistry>
+      <ThemeProvider theme={theme[themeId]}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
+    </StyledComponentsRegistry>
   )
 }

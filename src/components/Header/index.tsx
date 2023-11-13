@@ -11,6 +11,7 @@ import { useUIStore } from '@/global-stores'
 import { HiUserAdd } from 'react-icons/hi'
 import { IMAGE_DIMENSIONS } from '@/constants/config'
 import Modal from '../Modal'
+import DarkModeToggle from '../DarkModeToggle'
 
 const { DESKTOP, MOBILE } = IMAGE_DIMENSIONS
 
@@ -19,6 +20,7 @@ export default function Header() {
     isScroll,
     isMobile,
   }))
+
   const [imageDimensions, setImageDimensions] = useState(DESKTOP.NOT_SCROLL)
 
   useEffect(() => {
@@ -37,7 +39,10 @@ export default function Header() {
           <h1>{NAME}</h1>
           <p>{POSITION}</p>
         </S.NameContainer>
-        <Links />
+        <S.ActionsContainer>
+          <DarkModeToggle />
+          <Links />
+        </S.ActionsContainer>
       </S.MeContainer>
       <Nav />
     </S.Header>

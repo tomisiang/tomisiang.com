@@ -6,7 +6,6 @@ import { css, styled } from 'styled-components'
 
 const footerFontStyle = css`
   font-size: 14px;
-  color: ${({ theme }) => theme.blue1};
 `
 
 export const FooterMobile = styled.footer`
@@ -32,8 +31,9 @@ export const FooterDesktop = styled.footer`
   padding-right: 20px;
 
   p {
-    background-color: ${({ theme }) => theme.bg};
-    border: 1px solid ${({ theme }) => theme.gray1};
+    background-color: ${({ theme }) => theme.cardBg};
+    border: ${({ theme }) =>
+      theme.themeId === 'DARK' ? 'none' : `1px solid ${theme.gray1}`};
     border-radius: 10px;
     padding: 5px 10px;
   }

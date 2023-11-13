@@ -9,8 +9,11 @@ export const AboutSectionContainer = styled.div`
 `
 
 export const AboutParagraphContainer = styled.div`
-  border: 1px solid ${({ theme }) => theme.gray1};
-  background-color: ${({ theme }) => theme.gray2};
+  border: ${({ theme }) =>
+    `1px solid ${theme.themeId === 'DARK' ? theme.gray5 : theme.gray1}`};
+  background-color: ${({ theme }) =>
+    theme.themeId === 'DARK' ? theme.gray4 : theme.gray2};
+  transition: background-color 0.4s ease;
   border-radius: 10px;
   overflow: hidden;
 
@@ -36,7 +39,9 @@ export const AboutParagraphTop = styled.div`
 export const DownloadResume = styled.a`
   border: 0;
   padding: 8px 0;
-  background-color: ${({ theme }) => theme.blue7};
+  background-color: ${({ theme }) =>
+    theme.themeId === 'DARK' ? theme.gray3 : theme.blue7};
+  transition: background-color 0.4s ease;
   cursor: pointer;
 
   ${cssHStack};
@@ -45,7 +50,7 @@ export const DownloadResume = styled.a`
   gap: 5px;
 
   > svg {
-    fill: ${({ theme }) => theme.blue1};
+    fill: ${({ theme }) => theme.color};
     width: 15px;
     height: 15px;
 
@@ -112,7 +117,8 @@ export const TechnologiesBox = styled.div<{
     height: 100%;
     top: 0;
     left: 0;
-    background-color: ${({ theme }) => theme.blue3};
+    background-color: ${({ theme }) =>
+      theme.themeId === 'DARK' ? theme.white : theme.blue3};
 
     ${({ $column }) => {
       let opacity = 1
