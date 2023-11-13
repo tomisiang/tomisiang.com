@@ -6,7 +6,10 @@ export const Section = styled.section`
   margin-top: 20px;
   padding-bottom: 20px;
   margin-right: 20px;
-  border-bottom: 2px dashed ${({ theme }) => theme.gray1};
+  border-bottom: ${({ theme }) =>
+    theme.themeId === 'DARK'
+      ? `2px dashed ${theme.gray5}`
+      : `2px dashed ${theme.gray1}`};
 `
 export const SectionHeader = styled.h2`
   margin-bottom: 20px;

@@ -36,8 +36,9 @@ export const Modal = styled(Container)<Props>`
   top: 50%;
   left: 50%;
   height: calc(100% - ${OUTER_MARGIN * 2}px);
-  background-color: ${({ theme }) => theme.bg};
-  border: 1px solid ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) => theme.cardBg};
+  border: ${({ theme }) =>
+    theme.themeId === 'DARK' ? 'none' : `1px solid ${theme.gray1}`};
   padding: 30px 40px 30px;
   border-radius: 20px;
   z-index: 1000;
@@ -77,7 +78,7 @@ export const CloseButton = styled.button`
   }
 
   svg {
-    fill: ${({ theme }) => theme.red1};
+    fill: ${({ theme }) => theme.accent};
     width: 45px;
     height: 45px;
   }

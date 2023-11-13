@@ -26,8 +26,8 @@ export const Header = styled.header<HeaderProps>`
 
   width: 100%;
   z-index: 10;
-  transition: height 0.2s ease-out;
-  background: ${({ theme }) => theme.white2};
+  transition: height 0.2s ease-out, background-color 0.4s ease;
+  background-color: ${({ theme }) => theme.cardBg};
 
   ${cssVStack};
   justify-content: space-between;
@@ -69,6 +69,16 @@ export const NameContainer = styled.div`
   }
 `
 
+export const ActionsContainer = styled.div`
+  ${cssVStack};
+  align-items: flex-end;
+  gap: 6px;
+
+  @media only screen and (max-width: 768px) {
+    gap: 0;
+  }
+`
+
 export const MyImage = styled.div`
   > img {
     transition: width 0.2s ease-out, height 0.2s ease-out;
@@ -82,7 +92,7 @@ export const Links = styled.div`
   gap: 5px;
 
   svg {
-    fill: ${({ theme }) => theme.red1};
+    fill: ${({ theme }) => theme.accent};
     width: 25px;
     height: 25px;
 
@@ -138,10 +148,12 @@ export const AddFriendButton = styled.button<{ $isRevelealed: boolean }>`
   cursor: pointer;
   position: absolute;
   inset: 0;
-  background-color: ${({ theme }) => theme.gray2};
-  border: 1px solid ${({ theme }) => theme.gray1};
+  background-color: ${({ theme }) =>
+    theme.themeId === 'DARK' ? theme.gray4 : theme.gray2};
+  border: ${({ theme }) =>
+    theme.themeId === 'DARK' ? 'none' : `1px solid ${theme.gray1}`};
 
-  color: ${({ theme }) => theme.red1};
+  color: ${({ theme }) => theme.accent};
   font-weight: 700;
   font-size: 14px;
   border-radius: 10px;
@@ -172,7 +184,7 @@ export const AddFriendButton = styled.button<{ $isRevelealed: boolean }>`
     `}
 
   svg {
-    fill: ${({ theme }) => theme.red1};
+    fill: ${({ theme }) => theme.accent};
     width: 20px;
     height: 20px;
   }
@@ -182,16 +194,17 @@ export const AddFriendButtonMobile = styled.button`
   overflow: hidden;
   cursor: pointer;
   padding: 5px 10px;
-  background-color: ${({ theme }) => theme.gray2};
+  background-color: ${({ theme }) =>
+    theme.themeId === 'DARK' ? theme.gray4 : theme.gray2};
   border: 1px solid ${({ theme }) => theme.gray1};
 
-  color: ${({ theme }) => theme.red1};
+  color: ${({ theme }) => theme.accent};
   font-weight: 700;
   font-size: 12px;
   border-radius: 5px;
 
   svg {
-    fill: ${({ theme }) => theme.red1};
+    fill: ${({ theme }) => theme.accent};
     width: 15px;
     height: 15px;
   }
@@ -212,7 +225,7 @@ export const AddFriendInner = styled.div`
     inset: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.red1};
+    background: ${({ theme }) => theme.accent};
     transform: scaleY(0);
     animation: ${fadeInDown} 0.8s ease;
   }
@@ -253,7 +266,7 @@ export const LinksItem = styled.a`
   }
 
   svg {
-    fill: ${({ theme }) => theme.red1};
+    fill: ${({ theme }) => theme.accent};
     width: 25px;
     height: 25px;
   }
