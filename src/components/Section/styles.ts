@@ -10,6 +10,10 @@ export const Section = styled.section`
     theme.themeId === 'DARK'
       ? `2px dashed ${theme.gray5}`
       : `2px dashed ${theme.gray1}`};
+
+  @media only screen and (max-width: 768px) {
+    margin-right: 0;
+  }
 `
 export const SectionHeader = styled.h2`
   margin-bottom: 20px;

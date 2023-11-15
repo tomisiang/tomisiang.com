@@ -85,6 +85,10 @@ const GlobalStyle = createGlobalStyle`
   }
   ::-webkit-scrollbar {
     width: 8px;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   ::-webkit-scrollbar-track {
     background: ${({ theme }) =>
