@@ -12,6 +12,7 @@ interface HeaderProps {
 }
 
 export const Header = styled.header<HeaderProps>`
+  position: relative;
   height: ${({ $isScroll, $isMobile }) => {
     if ($isMobile) {
       return css`

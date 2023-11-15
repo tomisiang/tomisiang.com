@@ -10,6 +10,11 @@ const StyledButton = styled.div`
   color: ${({ theme }) =>
     theme.themeId === 'DARK' ? theme.white2 : theme.blue7};
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    top: 0;
+  }
 `
 
 /**
@@ -58,8 +63,8 @@ export default function DarkModeToggle() {
     <StyledButton onClick={toggle}>
       <animated.svg
         xmlns='http://www.w3.org/2000/svg'
-        width={isMobile ? 15 : 24}
-        height={isMobile ? 15 : 24}
+        width={isMobile ? 20 : 24}
+        height={isMobile ? 20 : 24}
         viewBox='0 0 24 24'
         fill='none'
         stroke='currentColor'
