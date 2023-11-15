@@ -20,6 +20,7 @@ export const Overlay = styled.div<Props>`
   /* background: rgba(8, 8, 16, 0.2); */
   z-index: 1000;
   backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   opacity: 0;
   transition: opacity ${ANIMATION_DELAY}ms ease-in ${ANIMATION_DELAY}ms;
 
