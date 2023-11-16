@@ -1,6 +1,6 @@
 'use client'
 
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import {
   ServerStyleSheet,
@@ -125,12 +125,17 @@ function StyledComponentsRegistry({ children }: PropsWithChildren) {
 
 export default function StyledComponents({ children }: PropsWithChildren) {
   const themeId = useThemeStore(state => state.id)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   return (
     <StyledComponentsRegistry>
       <ThemeProvider theme={theme[themeId]}>
         <GlobalStyle />
-        {children}
+        {isMounted && children}
       </ThemeProvider>
     </StyledComponentsRegistry>
   )

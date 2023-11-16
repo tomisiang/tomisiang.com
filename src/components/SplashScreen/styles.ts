@@ -21,7 +21,7 @@ export const SplashScreen = styled.div`
   width: 100vw;
   height: 100vh;
   height: 100svh;
-  background-color: ${({ theme }) => theme.white2};
+  background-color: ${({ theme }) => theme.cardBg};
   position: fixed;
   top: 0;
   left: 0;
@@ -29,6 +29,7 @@ export const SplashScreen = styled.div`
 `
 export const NameContainer = styled.div`
   ${cssTruncate};
+  color: ${({ theme }) => theme.color};
 
   > h1,
   > p {
@@ -38,7 +39,7 @@ export const NameContainer = styled.div`
 
 export const ProgressBar = styled.div`
   height: 6px;
-  background-color: ${({ theme }) => theme.blue1};
+  background-color: ${({ theme }) => theme.color};
   position: absolute;
   top: 0;
   left: 0;
