@@ -55,5 +55,5 @@ export const Main = styled.main`
 
 export const Emph = styled.span`
   font-weight: 700;
-  font-style: italic;
+  /* font-style: italic; */
 `
