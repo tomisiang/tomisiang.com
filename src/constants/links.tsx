@@ -9,8 +9,8 @@ import { BiLogoGmail } from 'react-icons/bi'
 
 export const MY_LINKS = [
   {
-    url: 'mailto:tomcasterisiangg@gmail.com',
-    path: 'tomcasterisiangg@gmail.com',
+    url: 'mailto:isiang.tom@gmail.com',
+    path: 'isiang.tom@gmail.com',
     icon: BiLogoGmail,
   },
   {
