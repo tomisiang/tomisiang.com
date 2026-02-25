@@ -1,7 +1,6 @@
 'use client'
 
 import { FOOTER } from '@/constants/strings'
-import * as S from './styles'
 import { useCallback, useState } from 'react'
 import { useEventListener } from '@/global-hooks'
 import { OUTER_MARGIN } from '@/constants/config'
@@ -42,13 +41,20 @@ export default function Footer() {
 
   return (
     <>
-      <S.FooterMobile id='footer'>
+      {/* Mobile */}
+      <footer
+        id='footer'
+        className='text-sm flex justify-between py-5 xl:hidden'
+      >
         <p>{footerString}</p>
-      </S.FooterMobile>
-      <S.FooterDesktop>
-        <p>{footerString}</p>
-      </S.FooterDesktop>
-      <S.BottomFiller $bottomPadding={bottomFiller} />
+      </footer>
+      {/* Desktop */}
+      <footer className='text-sm hidden xl:flex absolute left-0 bottom-5 w-[calc((100vw-680px)/2)] pr-5 xl:justify-center 2xl:justify-end 2xl:pr-0'>
+        <p className='bg-[#ECECEC] border-[1px] border-solid border-[#D5D5D5] py-[5px] px-[10px] rounded-[10px]'>
+          {footerString}
+        </p>
+      </footer>
+      <div style={{ paddingBottom: bottomFiller }} />
     </>
   )
 }

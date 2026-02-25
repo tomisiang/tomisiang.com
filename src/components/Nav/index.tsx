@@ -65,8 +65,11 @@ export default function Nav() {
   )
 
   return (
-    <S.Nav>
-      <S.NavUl ref={navRef}>
+    <nav className='relative'>
+      <ul
+        ref={navRef}
+        className='list-none p-0 flex gap-3 border-b-[2px] border-solid border-[#D5D5D5]'
+      >
         {NAV_ITEMS.map((navItem, index) => (
           <S.NavLi key={index}>
             <S.NavButton onClick={() => handleNavLinkClick(index)}>
@@ -74,8 +77,8 @@ export default function Nav() {
             </S.NavButton>
           </S.NavLi>
         ))}
-      </S.NavUl>
+      </ul>
       <S.Indicator ref={indicatorRef} />
-    </S.Nav>
+    </nav>
   )
 }

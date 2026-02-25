@@ -11,7 +11,7 @@ import { useUIStore } from '@/global-stores'
 import { HiUserAdd } from 'react-icons/hi'
 import { IMAGE_DIMENSIONS } from '@/constants/config'
 import Modal from '../Modal'
-import DarkModeToggle from '../DarkModeToggle'
+import { cn } from '@/lib/utils'
 
 const { DESKTOP, MOBILE } = IMAGE_DIMENSIONS
 
@@ -32,33 +32,33 @@ export default function Header() {
   }, [isMobile, isScroll])
 
   return (
-    <S.Header $isScroll={isScroll} $isMobile={isMobile}>
-      <S.MeContainer>
-        <MyImage {...imageDimensions} />
-        <S.NameContainer>
-          <h1>{NAME}</h1>
-          <p>{POSITION}</p>
-        </S.NameContainer>
-        <S.ActionsContainer>
-          <DarkModeToggle />
-          <Links />
-        </S.ActionsContainer>
-      </S.MeContainer>
+    <header
+      className={cn(
+        'relative w-full z-10 flex flex-col justify-between mt-5 md:mt-0 transition-[min-height,background-color] duration-[200ms,400ms] ease-out',
+        {
+          'min-h-[80px] md:min-h-[110px]': isScroll,
+          'min-h-[115px] md:min-h-[145px]': !isScroll,
+        }
+      )}
+    >
+      <div className='flex items-end gap-3'>
+        <Image
+          {...imageDimensions}
+          src='/assets/me.jpg'
+          alt='Picture of the author'
+          className='transition-[width,height] duration-200 ease-out rounded-[10px]'
+        />
+        <div className='flex flex-col flex-1'>
+          <h1 className='text-base md:text-3xl font-bold'>{NAME}</h1>
+          <p className='text-[12px] md:text-base'>{POSITION}</p>
+        </div>
+        <div className='flex flex-col items-end md:gap-2'>
+          {/* <DarkModeToggle /> */}
+          {/* <Links /> */}
+        </div>
+      </div>
       <Nav />
-    </S.Header>
-  )
-}
-
-interface MyImageProps {
-  width: number
-  height: number
-}
-
-function MyImage(props: MyImageProps) {
-  return (
-    <S.MyImage>
-      <Image {...props} src='/assets/me.jpg' alt='Picture of the author' />
-    </S.MyImage>
+    </header>
   )
 }
 

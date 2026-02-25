@@ -15,12 +15,3 @@ export const Section = styled.section`
     margin-right: 0;
   }
 `
-export const SectionHeader = styled.h2`
-  margin-bottom: 20px;
-  font-size: 24px;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 18px;
-  }
-`
-export const SectionContent = styled.div``
