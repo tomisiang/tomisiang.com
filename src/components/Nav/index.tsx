@@ -71,14 +71,20 @@ export default function Nav() {
         className='list-none p-0 flex gap-3 border-b-[2px] border-solid border-[#D5D5D5]'
       >
         {NAV_ITEMS.map((navItem, index) => (
-          <S.NavLi key={index}>
-            <S.NavButton onClick={() => handleNavLinkClick(index)}>
+          <div className='flex' key={index}>
+            <button
+              className='border-0 bg-transparent cursor-pointer py-2 px-0 text-xs md:text-base'
+              onClick={() => handleNavLinkClick(index)}
+            >
               {navItem.text}
-            </S.NavButton>
-          </S.NavLi>
+            </button>
+          </div>
         ))}
       </ul>
-      <S.Indicator ref={indicatorRef} />
+      <div
+        ref={indicatorRef}
+        className='absolute h-[3px] bg-[#32424F] bottom-0 rounded-[20px] transition-all duration-300 ease-in-out'
+      />
     </nav>
   )
 }
