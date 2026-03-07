@@ -45,14 +45,20 @@ export default function AboutSection() {
 
   return (
     <Section>
-      <S.AboutSectionContainer>
-        <S.AboutParagraphContainer>
-          <S.AboutParagraphTop>{ABOUT_PARAGRAPH}</S.AboutParagraphTop>
-          <S.DownloadResume href={'/docs/tom_isiang_resume.pdf'} download>
-            <AiOutlineDownload />
-            <span>Resume</span>
-          </S.DownloadResume>
-        </S.AboutParagraphContainer>
+      <div className='flex flex-col'>
+        <div className='flex flex-col overflow-hidden border-1 border-[1px] border-[#D5D5D5] bg-[#E3E4E6] transition-[background-color] duration-[400ms] ease-out rounded-[10px]'>
+          <div className='flex flex-col gap-5 p-3 [&>p]:indent-[2rem] leading-[1.55] text-xs md:text-base'>
+            {ABOUT_PARAGRAPH}
+          </div>
+          <a
+            href={'/docs/tom_isiang_resume.pdf'}
+            className='border-0 py-2 bg-[#C2C6CE] transition-[background-color] duration-[400ms] ease-out cursor-pointer flex items-center justify-center gap-[5px]'
+            download
+          >
+            <AiOutlineDownload className='fill-[#32424F] w-[10px] h-[10px] md:w-[15px] md:h-[15px]' />
+            <span className='text-[10px] md:text-sm'>Resume</span>
+          </a>
+        </div>
         <S.AboutTechnologies>
           <S.AboutTechnologiesHeading>
             {ABOUT_TECHNOLOGIES_HEADER}
@@ -63,7 +69,7 @@ export default function AboutSection() {
             ))}
           </S.TechnologiesUl>
         </S.AboutTechnologies>
-      </S.AboutSectionContainer>
+      </div>
     </Section>
   )
 }
